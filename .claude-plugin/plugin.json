@@ -1,0 +1,6 @@
+{
+  "name": "chat-uebersicht",
+  "version": "0.1.0",
+  "description": "Seitenleiste: welche Chats und Unterchats gerade arbeiten, woran, und wer fertig ist",
+  "types": "./types/index.d.ts"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "carsten-mods",
+  "owner": { "name": "Carsten" },
+  "plugins": [{ "name": "chat-uebersicht", "source": "./" }]
+}
