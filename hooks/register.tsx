@@ -446,10 +446,16 @@ export const register: Register = on => {
         {list.map(({ row, depth }) => (
           <Box key={row.id} flexDirection="column" paddingLeft={depth * 2}>
             {row.link && !row.isSelf ? (
-              <Button key={`open-${row.id}`} plain onPress={() => openChat(row.link ?? '')}>
-                {depth > 0 ? '↳ ' : ''}
-                <Text color={dot(row)}>●</Text> <Text weight="semibold">{row.title}</Text>
-              </Button>
+              // Der Punkt steht vor dem Knopf: In einem Knopf zeigt die App keine Farben.
+              <Box flexDirection="row">
+                <Text>
+                  {depth > 0 ? '↳ ' : ''}
+                  <Text color={dot(row)}>●</Text>{' '}
+                </Text>
+                <Button key={`open-${row.id}`} plain onPress={() => openChat(row.link ?? '')}>
+                  <Text weight="semibold">{row.title}</Text>
+                </Button>
+              </Box>
             ) : (
               <Text weight="semibold" wrap="truncate-end">
                 {depth > 0 ? '↳ ' : ''}
